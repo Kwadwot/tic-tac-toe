@@ -69,6 +69,25 @@ body {
   padding: 0;
   text-align: center;
   width: 34px;
+  transition: background-color 0.3s ease;
+}
+
+.winning-square {
+  background-color: #4CAF50 !important;
+  color: white;
+  animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .board-row:after {
