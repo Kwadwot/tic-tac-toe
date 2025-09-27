@@ -46,19 +46,9 @@ ul {
   padding-inline-start: 20px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
-}
-
 .square {
   background: #fff;
-  border: 1px solid #999;
+  border: 2px solid #ddd;
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -69,13 +59,35 @@ body {
   padding: 0;
   text-align: center;
   width: 34px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.square:hover {
+  background: #f0f8ff;
+  border-color: #4a90e2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
+}
+
+.square:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .winning-square {
   background-color: #4CAF50 !important;
   color: white;
   animation: pulse 1s ease-in-out;
+  border-color: #45a049 !important;
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.5) !important;
+}
+
+.winning-square:hover {
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.7) !important;
 }
 
 @keyframes pulse {
@@ -99,6 +111,7 @@ body {
 .status {
   margin-bottom: 10px;
 }
+
 .game {
   display: flex;
   flex-direction: row;
