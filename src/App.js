@@ -8,11 +8,15 @@ function Square({ value, onSquareClick, highlight }) {
   );
 }
 
+function Header({title}){
+  return <h1>{title ? title : 'Default title'}</h1>;
+}
+
 function StartPage({ onStartGame }) {
   return (
     <div className="start-page">
       <div className="start-content">
-        <h1 className="game-title">Tic Tac Toe</h1>
+        <Header title="Tic Tac Toe" className="game-title"></Header>
         <p className="game-description">
           Get three in a row to win!<br />
           X goes first, then O. Take turns clicking on empty squares.
@@ -155,15 +159,15 @@ function Game({ onBackToStart }) {
   });
 
   return (
-    <div className="game">
-      <div className="game-header">
+    <div className='game'>
+      <h1 className="game-header">
         <button className="back-button" onClick={onBackToStart}>
           ← Back to Start
         </button>
         <button className="new-game-button" onClick={handleNewGame}>
           New Game
         </button>
-      </div>
+      </h1>
       <div className="game-board">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
